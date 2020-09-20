@@ -1,8 +1,10 @@
 import {init, animate} from './canvas.js';
 import {shuffle, sleep} from './utils.js';
 
-let time = 30;
+/* time = 200 - Math.floor(Math.abs(DEFAULT_SPEED_VALUE)) * 2) with DEFAULT_SPEED_VALUE=50 because the slider is in the middle by default */
+let time = 100;
 var speedInput = document.getElementById('speed');
+/* speedInput.value can vary on a scale from 0 to 100 as the slider represents the percentage of the speed */
 speedInput.onchange = function() {
     time = 200 - Math.floor(Math.abs(+speedInput.value)) * 2;
     console.log("time: "+time);
